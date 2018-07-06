@@ -4,6 +4,7 @@ import com.hy.context.dao.UserDao;
 import com.hy.context.model.User;
 import com.hy.context.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,10 +14,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class UserServiceImpl implements UserService {
 
+    @Value("${username}")
+    private String name;
+
     @Autowired
     private UserDao userDao;
 
     public User getUserById(String id) {
+        System.out.println(name);
         return userDao.getUserById(id);
     }
 

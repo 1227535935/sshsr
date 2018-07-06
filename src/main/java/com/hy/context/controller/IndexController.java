@@ -13,4 +13,8 @@ public class IndexController {
     public String index(){
         return "/index_page";
     }
+    @RequestMapping("/login")
+    public String login(){
+        return "/index_page";
+    }
 }
